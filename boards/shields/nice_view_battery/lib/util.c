@@ -8,12 +8,12 @@ void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[], const int size) {
 
     lv_img_dsc_t img;
     img.data = (void *)cbuf_tmp;
-    img.header.cf = LV_IMG_CF_TRUE_COLOR;
+    img.header.cf = LV_COLOR_FORMAT_ARGB8888;
     img.header.w = size;
     img.header.h = size;
 
     lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
-    lv_canvas_transform(canvas, &img, 900, LV_IMG_ZOOM_NONE, -1, 0, size / 2,
+    lv_canvas_transform(canvas, &img, 900, LV_ZOOM_NONE, -1, 0, size / 2,
                         size / 2, false);
 }
 
